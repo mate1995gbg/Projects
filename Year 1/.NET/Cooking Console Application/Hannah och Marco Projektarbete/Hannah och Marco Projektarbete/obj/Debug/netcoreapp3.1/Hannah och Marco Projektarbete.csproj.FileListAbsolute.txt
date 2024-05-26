@@ -1,0 +1,14 @@
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\bin\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.exe
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\bin\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.deps.json
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\bin\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.runtimeconfig.json
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\bin\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.runtimeconfig.dev.json
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\bin\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.dll
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\bin\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.pdb
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.AssemblyInfoInputs.cache
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.AssemblyInfo.cs
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.csproj.CoreCompileInputs.cache
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.dll
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.pdb
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.genruntimeconfig.cache
+C:\Users\Buggi\source\repos\Hannah och Marco Projektarbete\Hannah och Marco Projektarbete\obj\Debug\netcoreapp3.1\Hannah och Marco Projektarbete.csproj.AssemblyReference.cache
