@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/selectedEngineTextView"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectEngineTextView" />
+
+    <TextView
+        android:id="@+id/selectEngineTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:text="Valt motor:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedFuelTextView" />
+
+    <TextView
+        android:id="@+id/selectedFuelTextView"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectFuelTextView" />
+
+    <TextView
+        android:id="@+id/selectFuelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:text="Valt drivmedel:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedModelTextView" />
+
+    <TextView
+        android:id="@+id/selectedModelTextView"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectModelTextView" />
+
+    <TextView
+        android:id="@+id/selectModelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:text="Vald modell:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedMakeTextView" />
+
+    <Button
+        android:id="@+id/setDestinationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="TillbakaMain"
+        android:text="Tillbaka"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/addManSpinner"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/purple_200"
+        android:popupBackground="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addManText" />
+
+    <Spinner
+        android:id="@+id/addEngSpinner"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addEngText" />
+
+    <TextView
+        android:id="@+id/addManText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="Välj bilmärke:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/addFuelSpinner"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addFuelText" />
+
+    <TextView
+        android:id="@+id/addEngText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/addEng_Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addFuelSpinner" />
+
+    <TextView
+        android:id="@+id/addModelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Välj bilmodell:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addManSpinner" />
+
+    <TextView
+        android:id="@+id/addFuelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Välj drivmedel:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addModelSpinner" />
+
+    <Spinner
+        android:id="@+id/addModelSpinner"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addModelText" />
+
+    <TextView
+        android:id="@+id/selectMaketextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="140dp"
+        android:text="Vald bil:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/selectedMakeTextView"
+        android:layout_width="130dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectMaketextView" />
+
+    <Button
+        android:id="@+id/addMaketoTextViewbutton"
+        android:layout_width="58dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="160dp"
+        android:onClick="onClickSelected"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addManSpinner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addModeltoTextViewbutton"
+        android:layout_width="58dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="160dp"
+        android:onClick="onClickSelected"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/addModelSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/addMaketoTextViewbutton" />
+
+    <Button
+        android:id="@+id/addFueltoTextViewbutton"
+        android:layout_width="58dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="160dp"
+        android:onClick="onClickSelected"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/addFuelSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/addModeltoTextViewbutton" />
+
+    <Button
+        android:id="@+id/addEngtoTextViewbutton"
+        android:layout_width="58dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="160dp"
+        android:onClick="onClickSelected"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toEndOf="@+id/addEngSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/addFueltoTextViewbutton" />
+
+    <Button
+        android:id="@+id/saveCarSpecsButton"
+        android:layout_width="158dp"
+        android:layout_height="56dp"
+        android:text="Spara Bil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlanActivity">
+
+    <Button
+        android:id="@+id/startFrGPSButton"
+        android:layout_width="61dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="getCoords"
+        android:text="gps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/endFromGPSButton"
+        android:layout_width="61dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="30dp"
+        android:onClick="openEndCoordinatesMap"
+        android:text="gps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/StartTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Avfärd:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/EndTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Slutdestination:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startLocTextView" />
+
+    <TextView
+        android:id="@+id/EstimatedCo2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Beräknade Utsläpp:"
+        app:layout_constraintBottom_toTopOf="@+id/estimatedCo2ValueTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Co2ThisMonthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Fordonsutsläpp denna månad:"
+        app:layout_constraintBottom_toTopOf="@+id/Co2ThisMonthValueTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/estimatedCo2ValueTextView"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="40dp"
+        android:text="NULL"
+        app:layout_constraintBottom_toTopOf="@+id/Co2ThisMonthTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Co2ThisMonthValueTextView"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="50dp"
+        android:text="NULL"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/StartTripButton"
+        android:layout_width="212dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Starta Resa"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="212dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:onClick="backtoMainActivity"
+        android:text="Tillbaka"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StartTripButton" />
+
+    <TextView
+        android:id="@+id/destinationValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="NULL"
+        app:layout_constraintBottom_toTopOf="@+id/EstimatedCo2TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.716"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/distanceToDestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="20dp"
+        android:text="Avstånd till destination:"
+        app:layout_constraintBottom_toTopOf="@+id/EstimatedCo2TextView"
+        app:layout_constraintEnd_toStartOf="@+id/destinationValueTextView"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/startLocTextView"
+        android:layout_width="212dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="10dp"
+        android:text="Mata in avfärdsadress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StartTextView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="212dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EndTextView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CO2</string>
+    <string name="add_RegNr">Skriv in bilens registeringsnummer</string>
+    <string name="add_regNrGo">Lägg till</string>
+    <string name="title_activity_rutt_detail_host">RuttDetailHostActivity</string>
+    <string name="title_rutt_list">Rutter</string>
+    <string name="title_rutt_detail">Rutt Detail</string>
+    <string name="addEng_Text">Välj motor:</string>
+    <string name="LOADDB">LOAD DB</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_select_end_maps">selectEndMapsActivity</string>
+</resources>
