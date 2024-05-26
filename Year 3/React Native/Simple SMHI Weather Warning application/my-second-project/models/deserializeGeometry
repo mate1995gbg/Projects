@@ -1,0 +1,106 @@
+import { GeometryTypeEnum, fromString } from "./GeometryTypeEnum";
+import { Geometry } from './Geometry';
+
+export function deserializeGeometry(data: any): Geometry {
+
+    const typeString = data.type;
+    const type = fromString(typeString);
+
+    let geometry = new Geometry();
+    let pointCoordinates = [];
+    let polygonCoordinates = [];
+    let lineStringCoordinates = [];
+    let multiPolygonCoordinates = [];
+    geometry.setType(type);
+    geometry.setPointCoordinates(pointCoordinates);
+    geometry.setPolygonCoordinates(polygonCoordinates);
+    geometry.setLineStringCoordinates(lineStringCoordinates);
+    geometry.setMultiPolygonCoordinates(multiPolygonCoordinates);
+
+    const coordinates = data.coordinates;
+
+    switch (type) {
+        case GeometryTypeEnum.POINT:
+            if (Array.isArray(coordinates)) {
+                geometry.setPointCoordinates(coordinates);
+            } else {
+                console.error("GEOMERTYDESERIALIZER(POINT) - COORDINATESNODE IS NOT AN ARRAY OR OTHER ERROR");
+            }
+            break;
+
+        case GeometryTypeEnum.LINE_STRING:
+            if (Array.isArray(coordinates)) {
+                geometry.setLineStringCoordinates(coordinates);
+            } else {
+                console.error("GEOMERTYDESERIALIZER(LINE STRING) - COORDINATESNODE IS NOT AN ARRAY OR OTHER ERROR")
+            }
+            break;
+
+        case GeometryTypeEnum.POLYGON:
+            if (Array.isArray(coordinates)) {
+                let polygon: number[][] = []; // equivalent to List<List<Double>>
+        
+                for (let linearRingNode of coordinates) {
+                    if (Array.isArray(linearRingNode)) {
+                        let linearRing: number[] = []; // equivalent to List<Double>
+        
+                        for (let coordinate of linearRingNode) {
+                            if (typeof coordinate === 'number') {
+                                linearRing.push(coordinate);
+                            } else {
+                                console.error("GEOMERTYDESERIALIZER - Invalid coordinate value in POLYGON");
+                                break;
+                            }
+                        }
+        
+                        polygon.push(linearRing);
+                    } else {
+                        console.error("GEOMERTYDESERIALIZER - LINEARRINGNODE IN POLYGON IS NOT AN ARRAY OR OTHER ERROR");
+                    }
+                }
+        
+                geometry.setPolygonCoordinates(polygon);
+            } else {
+                console.error("GEOMERTYDESERIALIZER - COORDINATESNODE IN POLYGON IS NOT AN ARRAY OR OTHER ERROR");
+            }
+            break;
+            
+        case GeometryTypeEnum.MULTI_POLYGON: 
+            if (Array.isArray(coordinates)) {
+                let multiPolygon: number[][][] = []; // array of array of arrays
+
+                for (let outerRingNode of coordinates){
+                    if (Array.isArray(outerRingNode)) {
+                        let outerRing: number[][] = []; // array of arrays
+
+                        for (let linearRingNode of outerRingNode){
+                            if (Array.isArray(linearRingNode)){
+                                let linearRing: number[] = []; // array
+
+                                for (let coordinate of linearRingNode){
+                                    if (typeof coordinate === 'number'){
+                                        linearRing.push(coordinate);
+                                    } else {
+                                        console.error("GEOMERTYDESERIALIZER - Invalid coordinate value in MULTI_POLYGON");
+                                        break;
+                                    }
+                                }
+                                outerRing.push(linearRing);
+                            } else {
+                                console.error("GEOMERTYDESERIALIZER - LINEARRINGNODE IN MULTI_POLYGON IS NOT AN ARRAY OR OTHER ERROR");
+                            }
+                        }
+                        multiPolygon.push(outerRing);
+                    } else {
+                        console.error("GEOMERTYDESERIALIZER - OUTERRINGNODE IN MULTI_POLYGON IS NOT AN ARRAY OR OTHER ERROR");
+                    }
+                }
+                geometry.setMultiPolygonCoordinates(multiPolygon);
+            } else{
+                console.error("GEOMERTYDESERIALIZER - COORDINATESNODE IN MULTI_POLYGON IS NOT AN ARRAY OR OTHER ERROR");
+            }
+            break;
+    }
+
+    return geometry;
+}
