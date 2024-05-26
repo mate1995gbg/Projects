@@ -1,0 +1,23 @@
+﻿@*Detta är min loginlayoutsida som appliceras på loginsidan i mitt projekt. *@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <title>Retro Websites.com</title>
+        <link rel="stylesheet" href="~/css/style.css" />
+    </head>
+    <body>
+        <div class="header">
+            <img src="~/lib/images/projekt_logo.png" id="header_logo" />
+            <h1 class="header_text"></h1>
+            <div id="Webpage Name"></div>
+        </div>
+        <div class="header_piping">
+        </div>
+        <div class="main">
+            <div class="content-container-login">
+                @RenderBody();
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+﻿@*sidan som låter dig ladda upp till databasen (Create - G) samt ladda upp fil (VG)*@
+@*Jag använder mig av bootstrap och glyphicons för att få sidan att se lite snyggare ut*@
+
+@model RetroWebsites.Models.Post
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<h1>Lägg till ny Post</h1>
+<div class="content-subcontainer">
+    <form asp-action="Create" enctype="multipart/form-data">
+    @*formen skickas till den andra "Create"-metoden (med två inparametrar) i NavController som tar en inparameter vid submit*@
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-console"></i></span>
+        <input asp-for="PostUrl" id="email" type="text" class="form-control" name="PostUrl" placeholder="Put the URL here...">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        <input asp-for="PostDescription" id="password" type="text" class="form-control" name="PostDescription" placeholder="Describe the website...">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-floppy-open"></i></span>
+        <input id="file" type="file" class="form-control" name="postedImage" placeholder="Upload your post image">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon"></span>
+        <input type="submit" class="form-control" value="Submit">
+    </div>
+    </form>
+</div>

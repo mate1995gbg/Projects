@@ -1,0 +1,50 @@
+﻿@*Detta är min layoutsida som appliceras på alla sidor i mitt projekt. i denna finns även min jqueryfunktion i <headen> (G) *@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Websites.com</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () { //min Jquery funktion 
+            $("button").click(function () {
+                $("#infobox").fadeIn();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="~/lib/images/projekt_logo.png" id="header_logo" />
+        <h1 class="header_text"></h1>
+        <div id="Webpage Name"></div>
+        <div class="user-buttons-container">
+            <a class="button_addpost" asp-action="Create" asp-controller="Nav"></a>
+            <a class="logout-button" asp-action="SignOutUser" asp-controller="Account"></a>
+        </div>
+    </div>
+    <div class="header_piping">
+    </div>
+    <div class="mobilesidebar">
+        <a class="button_home_mb" asp-action="Index" asp-controller="Nav">Home</a>
+        <a class="button_search_mb" asp-action="Create" asp-controller="Nav">Add Post</a>
+        <button class="button_about_mb" @*asp-action="About" asp-controller="Nav"*@>About</button>
+        <a class="button_about_mb" asp-action="Weather" asp-controller="Nav">Weather</a>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <a class="button_home" asp-action="Index" asp-controller="Nav"></a>
+            <a class="button_search" asp-action="Index" asp-controller="Nav"></a>
+            <button class="button_about"></button>
+            <a class="button_weather" asp-action="Weather" asp-controller="Nav"></a>
+        </div>
+        <div class="content-container">
+            <div id="infobox"> @*Infoboxen visas när Jqueryfunktionen körs*@ 
+                <h3>More info here</h3>
+            </div>
+            @RenderBody();
+        </div>
+    </div>
+</body>
+</html>

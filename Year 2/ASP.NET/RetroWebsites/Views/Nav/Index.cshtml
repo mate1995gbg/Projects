@@ -1,0 +1,27 @@
+﻿@*Read & Lista => Index.cshtml där listan som läser in från dbn visas => (G)
+
+Info hämtas med Entity framework & LINQ => (G)*@
+
+@model List<RetroWebsites.Models.Post>
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@foreach (var Post in Model)
+{
+    <div class="content-group">
+        <div class="image-container">
+            <img src="@Html.DisplayFor(modelItem => Post.ImageURL)" class="post_thumbnail" />
+        </div>
+        <div class="dialog-container">
+            <div class="comment-container">
+                <h3 id="postTit"><a href="@Html.DisplayFor(modelItem => Post.PostUrl)"> @Html.DisplayFor(modelItem => Post.PostUrl) </a></h3>
+                <h4 id="postDesc">@Html.DisplayFor(modelItem => Post.PostDescription)</h4>
+                <h5 id="postId">@Html.DisplayFor(modelItem => Post.PostId)</h5>
+            </div>
+            <div class="rating-container">
+            </div>
+        </div>
+    </div>
+}
+
+

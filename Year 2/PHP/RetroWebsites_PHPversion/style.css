@@ -1,0 +1,1053 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+body {
+    margin: 0%;
+	display: flex;
+    flex-direction: column;  
+    background-color: #333333;  
+}
+.header{
+    height: 10vh;
+    width: 100%;
+    background-image: linear-gradient(#c0c0c0, #494949);
+    display: flex;
+    flex-direction: row;
+}
+.sidebar{
+    position: fixed;
+    visibility: visible;
+    height: 375px;
+    width: 150px;
+    margin-top: 7%;
+    margin-left:0.5%;
+	order:0;
+    display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/sidebar_piping.png");
+    background-size: 100% 100%;
+    background-color: transparent;
+    border-radius: 4px;
+}
+.main{
+    height: 100vh;
+    /*ÄNDRA HEIGHT TILL 100% SENARE här och i header!*/
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+}
+.button_home{
+    background-image: url("images/button_unpressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    border: none;
+}
+.button_home:hover {
+    background-image: url("images/button_pressed2_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    border: none;
+    transition-duration: 0.4s;
+  }
+  .button_about{
+    background-image: url("images/about_unpressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    margin-top: 5%;
+    border: none;
+}
+.button_about:hover {
+    background-image: url("images/about_pressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    border: none;
+    margin-top: 5%;
+    transition-duration: 0.4s;
+  }
+  .button_search{
+    background-image: url("images/search_unpressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    margin-top: 5%;
+    border: none;
+}
+.button_search:hover {
+    background-image: url("images/search_pressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    border: none;
+    margin-top: 5%;
+    transition-duration: 0.4s;
+  }
+  .button_archive{
+    background-image: url("images/archive_unpressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    margin-top: 5%;
+    border: none;
+}
+.button_archive:hover {
+    background-image: url("images/archive_pressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    border: none;
+    margin-top: 5%;
+    transition-duration: 0.4s;
+  }
+  .button_filter{
+    background-image: url("images/filter_unpressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    margin-top: 5%;
+    border: none;
+}
+.button_filter:hover {
+    background-image: url("images/filter_pressed_piping.png");
+    background-color: transparent;
+    width: 80%;
+    height: 15%;
+    background-size: 100% 100%;
+    border: none;
+    margin-top: 5%;
+    transition-duration: 0.4s;
+  }
+#button_addpost{
+    position: fixed;
+    background-image: url("images/+btn_unpressed.png");
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%;
+    margin-top: 1.3%;
+    margin-left:-5.5%;
+    border: none;
+}
+#button_addpost:hover {
+    position: fixed;
+    background-image: url("images/+btn_pressed.png");
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    background-size: 100% 100%;
+    border: none;
+    margin-top: 1.3%;
+    margin-left:-5.5%;
+    transition-duration: 0.4s;
+  }
+.nav{
+    text-align: center;
+    color: white;
+    text-decoration:dotted;
+}
+.form-group{
+	order:1;
+	height: 100%;
+	width:100%;
+	text-align: center;
+	background-color:rgb(27, 46, 46);
+}
+.content-container{
+    margin-top:5%;
+    margin-left:20%;
+    text-align: left;
+}
+.content-group{
+	height:50%;
+	width:80%;
+	margin:auto;
+	background-image: url("images/article_piping.png");
+    background-color: transparent;
+    background-size: 100% 100%;
+    margin-top: 3%;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.image-container{
+	height:60%;
+	width:20%;
+    margin:auto;
+    margin-top: 10%;
+    margin-left: 3%;
+	background-color: #c0c0c0;
+    display:inline-block;
+    border-radius: 4px;
+    border: 2px #494949;
+}
+.dialog-container{
+	height:95%;
+	width:80%;
+    margin:auto;
+    margin-top: 3%;
+    margin-left: 0.7%;
+    display:flex;
+    flex-direction: column;
+}
+.comment-container{
+	height:90%;
+    width:95%;
+    margin-top: 0.7%;
+    margin-left: 0.7%;
+    background-color: #c0c0c0;
+    display:inline-block;
+    border-radius: 4px;
+    border: 2px #494949;
+}
+.rating-container{
+	height:10%;
+	width:95%;
+    margin-top: 0.7%;
+    margin-bottom: 4.5%;
+    margin-left: 0.7%;
+    background-color: #c0c0c0;
+    display:inline-block;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 4px;
+    border: 2px #494949;
+}
+.addpost-container{
+    width: 300px;
+    height: 300px;
+    margin-right: 5%;
+    margin-top: 5.6%;
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+}
+#postedBy{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+#postTit{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.post_thumbnail{
+    height:100%;
+    width:100%;
+    object-fit: contain;
+}
+.header_text{
+    height:40%;
+    width:20%;
+    background-image: url("images/header_text.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left: 36%;
+    margin-top: 1.7%;
+    
+}
+.header_piping{
+    height: 6px;
+    width:100%;
+    background-image: url("images/header_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.user-buttons-container{
+    height:100%;
+    width:30%;
+    margin-left: auto;
+    display: flex;
+    flex-direction:row;
+    border:none;
+    justify-content: flex-end;
+    align-items:flex-end;
+}
+.login-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/login_button_header_unpressed_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+    
+}
+.login-button:hover{
+    height:40px;
+    width:85px;
+    transition-duration: 0.4s;
+    background-image: url("images/login_button_header_pressed2_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+.logout-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/logout_button_header_unpressed_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+    
+}
+.logout-button:hover{
+    height:40px;
+    width:85px;
+    transition-duration: 0.4s;
+    background-image: url("images/logout_button_header_pressed_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+.deleteform{
+    margin-left: 10%;
+}
+.signup-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/signup_button_header_pressed_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+.signup-button:hover{
+    height:40px;
+    width:85px;
+    background-image: url("images/signup_button_pressed_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition-duration: 0.4s;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+.profile-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/profile_unpressed_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+    
+}
+.profile-button:hover{
+    height:40px;
+    width:85px;
+    transition-duration: 0.4s;
+    background-image: url("images/profile_pressed_piping.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+.deleteuser-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/delete_user_unpressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+    
+}
+.deleteuser-button:hover{
+    height:40px;
+    width:85px;
+    transition-duration: 0.4s;
+    background-image: url("images/delete_user_pressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+.updatepass-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/changepass_user_unpressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+    
+}
+.updatepass-button:hover{
+    height:40px;
+    width:85px;
+    transition-duration: 0.4s;
+    background-image: url("images/changepass_user_pressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+#likesBtn{
+    height:100%;
+    width:45px;
+    background-image: url("images/likesbtn_unpressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+}
+#likesBtn:active{
+    height:100%;
+    width:45px;
+    background-image: url("images/likesbtn_pressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+
+}
+
+#commentBtn{
+    height:100%;
+    width:20%;
+    background-image: url("images/commentsbtn_unpressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-top: -10%;
+
+}
+#commentBtn:active{
+    height:100%;
+    width:20%;
+    background-image: url("images/commentsbtn_upressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+
+}
+
+#shareBtn{
+    height:100%;
+    width:45px;
+    background-image: url("images/sharebtn_unpressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+
+}
+#shareBtn:active{
+    height:100%;
+    width:45px;
+    background-image: url("images/sharebtn_pressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+
+}
+
+/* FOR LOGIN-PAGE */
+.form-group{
+	order:1;
+	height: 100vh;
+	width:90vw;
+    margin:0;
+	text-align: center;
+    background-color: transparent;
+}
+.login-group{
+	height:250px;
+	width:300px;
+	margin:auto;
+	margin-top: 15%;
+	background-color: slategray;
+	border-style:solid;
+	border-color:cadetblue;
+	border-radius: 2px;
+}
+.signup-group{
+	height:fit-content;
+	width:fit-content;
+	margin:auto;
+	margin-top: 15%;
+	background-color: slategray;
+	border-style:solid;
+	border-color:cadetblue;
+	border-radius: 2px;
+}
+#login-text{
+    margin-top: 6%;
+}
+#inputusername{
+    width: 90%;
+    margin: 5%;
+}
+#inputpassword{
+    width: 90%;
+    margin: 5%;
+}
+#inputemail{
+    width: 90%;
+    margin: 5%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .mobilesidebar{
+    width:0px;
+    height: 0px;
+    display: row;
+    flex-direction: column;
+    visibility: collapse;
+  }
+  .button_home_mb{
+    width:0px;
+    height: 0px;
+    visibility: collapse;
+  }
+  .button_search_mb{
+    width:0px;
+    height: 0px;
+    visibility: collapse;
+    
+  }
+  .button_archive_mb{
+    width:0px;
+    height: 0px;
+    visibility: collapse;
+    
+  }
+  .button_filter_mb{
+    width:0px;
+    height: 0px;
+    visibility: collapse;
+  }
+  .button_about_mb{
+    width:0px;
+    height: 0px;
+    visibility: collapse;
+  }
+  .deleteuser-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/delete_user_unpressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+    
+}
+.deleteuser-button:hover{
+    height:40px;
+    width:85px;
+    transition-duration: 0.4s;
+    background-image: url("images/delete_user_pressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+.updatepass-button{
+    height:40px;
+    width:85px;
+    background-image: url("images/changepass_user_unpressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+    
+}
+.updatepass-button:hover{
+    height:40px;
+    width:85px;
+    transition-duration: 0.4s;
+    background-image: url("images/changepass_user_pressed.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border:none;
+    margin-bottom: 2.2%;
+    margin-right: 3.5%;
+}
+  .deleteform{
+    margin-left: 43%;
+}	
+
+@media (max-width: 800px) {  /* --------------------------------------------------------------cutoff -------------------------------------------*/
+                             /* --------------------------------------------------------------cutoff -------------------------------------------*/
+    .sidebar{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+    }
+    #button_addpost{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+    }
+    #button_addpost:hover {
+        visibility: collapse;
+        height:0%;
+        width:0%;
+      }
+      .addpost-container{
+        height:0%;
+        width:0%;
+        visibility: collapse;
+        height:0%;
+        width:0%;
+    }
+    .content-container{
+        height: auto;
+        width: 100%;
+        margin-top:5%;
+        margin-right: -2%;
+        text-align: left;
+        display:flex;
+        flex-direction: column;
+        
+    }
+    .content-group{
+        height:40%;
+        width:100%;
+        background-image: url("images/article_piping.png");
+        background-color: transparent;
+        background-size: 100% 100%;
+        margin-top: 3%;
+        margin-left: -11%;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+    }
+    .user-buttons-container{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        margin-left: auto;
+        display: flex;
+        flex-direction:row;
+        border:none;
+        justify-content: flex-end;
+        align-items:flex-end;
+    }
+    .login-button{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        background-image: url("images/login_button_header_unpressed_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+        
+    }
+    .login-button:hover{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        transition-duration: 0.4s;
+        background-image: url("images/login_button_header_pressed2_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+    }
+    .logout-button{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        background-image: url("images/logout_button_header_unpressed_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+        
+    }
+    .logout-button:hover{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        transition-duration: 0.4s;
+        background-image: url("images/logout_button_header_pressed_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+    }
+    .signup-button{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        background-image: url("images/signup_button_header_pressed_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+    }
+    .signup-button:hover{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        background-image: url("images/signup_button_pressed_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transition-duration: 0.4s;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+    }
+    .profile-button{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        background-image: url("images/profile_unpressed_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+        
+    }
+    .profile-button:hover{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+        transition-duration: 0.4s;
+        background-image: url("images/profile_pressed_piping.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border:none;
+        margin-bottom: 2.2%;
+        margin-right: 3.5%;
+    }
+    .addpost-container{
+        visibility: collapse;
+        height:0%;
+        width:0%;
+    }
+    .header_text{
+        height:40%;
+        width:40%;
+        background-image: url("images/header_text.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-left: 17.5%;
+        margin-top: 3%;
+        
+    }
+
+
+
+
+    .header{
+        height: 10vh;
+        width: 100%;
+        background-image: linear-gradient(#c0c0c0, #494949);
+        display: flex;
+        flex-direction: row;
+    }
+    .mobilesidebar{
+        width:100%;
+        height:fit-content;
+        display: flex;
+        flex-direction: row;
+        visibility: visible;
+        justify-content: center;
+      }
+      .button_home_mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+      .button_search_mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+        
+      }
+      .button_archive_mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+      .button_filter_mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+      .button_about_mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+      
+      .profile-button-mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+        
+      }
+      .logout-button-mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+      .signup-button-mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+      .login-button-mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+      .addpost-button-mb{
+        width:80px;
+        height:30px;
+        visibility: visible;
+        box-shadow:inset 0px 1px 3px 0px #91b8b3;
+        background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+        background-color:#768d87;
+        border-radius:5px;
+        border:1px solid #566963;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:11px 23x;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #2b665e;
+      }
+}
+    
+
+

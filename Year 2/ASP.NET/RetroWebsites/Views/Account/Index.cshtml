@@ -1,0 +1,35 @@
+﻿@*loginsidan här, sidan använder en form för att skicka data till indexcontrollern i AccountLayout.*@
+@model RetroWebsites.Models.UserModel
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Websites.com</title>
+    <link rel="stylesheet" href="~/css/style.css"  />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header">
+        <div id="Webpage Name"></div>
+        <img src="~/lib/images/projekt_logo.png" id="header_logo" />
+        <h1 class="header_text"></h1>
+    </div>
+    <div class="header_piping">
+    </div>
+    <div class="main">
+        <div class="form-group">
+            <form method="post" asp-controller="account" asp-action="index" asp-route-returnurl="@ViewData["ReturnUrl"]">
+                <div class="login-group">
+                    <h1 class="h6 mb-3 font-weight-normal" id="login-text">Please enter username:</h1>
+                    @Html.EditorFor(m => m.UserName)
+                    <h1 class="h6 mb-3 font-weight-normal" id="login-text">Please enter password:</h1>
+                    @Html.PasswordFor(m => m.Password)
+                    <br />
+                    <input class="btn btn-sm btn-primary btn-block" id="login-button" name="loginbtn" type="submit" value="Log In" />
+                </div>
+                @ViewBag.ErrorMessage
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
