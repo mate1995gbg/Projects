@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="buttonStyle">@style/Widget.App.Button</item>
+    </style>
+
+    <style name="CustomDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowMinWidthMajor">150%</item>
+        <item name="android:windowMinWidthMinor">150%</item>
+        <!-- Other style properties for your dialog -->
+    </style>
+
+    <!-- Style for regular buttons. -->
+    <style name="Widget.App.Button" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:background">@drawable/rounded_button_allbuttonsexceptwarning</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">12dp</item>
+        <!-- Add other button styling attributes here -->
+    </style>
+
+    <!-- Style for warning buttons. -->
+    <style name="Widget.App.WarningButton" parent="Widget.App.Button">
+        <item name="android:visibility">gone</item>
+        <item name="android:backgroundTint">@color/red_warning</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:clickable">false</item>
+        <!-- Add other warning-specific attributes here -->
+    </style>
+
+</resources>

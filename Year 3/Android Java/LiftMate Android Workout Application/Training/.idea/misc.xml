@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/drawable/carvedstone.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/drawable/circle_background.xml" value="0.1185" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/drawable/rounded_button.xml" value="0.122" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/drawable/rounded_button_allbuttonsexceptwarning.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/drawable/splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/activity_calorietrackeroverview.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/activity_create_profile.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/activity_new_workout.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/activity_profile_configuration.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/activity_profile_menu.xml" value="0.30572916666666666" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/activity_workout_history.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/calorietrackeroverview_list_carditem.xml" value="0.2803030303030303" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/dialogfragment_add_exercise.xml" value="0.33" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/dialogfragment_add_exercise_to_category.xml" value="0.3234375" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/dialogfragment_add_exercisecategory.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/dialogfragment_oldworkout.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/dialogfragment_remove_exercisecategory.xml" value="0.25" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/oldworkout_list_carditem.xml" value="0.2477777777777778" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/oldworkout_set_item.xml" value="0.25" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/rounded_button.xml" value="0.2484375" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/toolbar_layout2.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/workout_list_carditem.xml" value="0.2" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/workout_set_item.xml" value="0.1" />
+        <entry key="..\:/Users/Marco/AndroidStudioProjects/Training/app/src/main/res/layout/workouthistory_list_carditem.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="4dp">
+
+    <TextView
+        android:id="@+id/oldWorkoutWeightTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Weight"/>
+
+    <TextView
+        android:id="@+id/oldWorkoutKgTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KG"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="10dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/oldWorkoutTimesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textColor="@color/purple_200"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:paddingEnd="4dp"/>
+
+        <TextView
+            android:id="@+id/oldWorkoutRepsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Reps"/>
+    </LinearLayout>
+</LinearLayout>

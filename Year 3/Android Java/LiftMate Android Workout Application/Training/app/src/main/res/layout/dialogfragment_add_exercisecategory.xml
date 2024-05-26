@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="30dp">
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:id="@+id/backToNewWorkoutBtn"
+        android:text="Back"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set exercise category name:"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:id="@+id/newExerciseCategoryEditText"
+        android:inputType="text"
+        android:digits="abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ -+1234567890()" />
+    <Button
+        android:id="@+id/addExerciseCategoryBtn"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Add Category" />
+</LinearLayout>
