@@ -1,0 +1,12 @@
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\bin\Debug\Employees.txt
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\bin\Debug\LabbAPR400MarcoTeranGutmanowitz.exe.config
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\bin\Debug\LabbAPR400MarcoTeranGutmanowitz.exe
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\bin\Debug\LabbAPR400MarcoTeranGutmanowitz.pdb
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\bin\Debug\ClassLibraryForProject.dll
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\bin\Debug\ClassLibraryForProject.pdb
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\obj\Debug\LabbAPR400MarcoTeranGutmanowitz.csproj.AssemblyReference.cache
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\obj\Debug\LabbAPR400MarcoTeranGutmanowitz.csproj.SuggestedBindingRedirects.cache
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\obj\Debug\LabbAPR400MarcoTeranGutmanowitz.csproj.CoreCompileInputs.cache
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\obj\Debug\LabbAPR400MarcoTeranGutmanowitz.csproj.CopyComplete
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\obj\Debug\LabbAPR400MarcoTeranGutmanowitz.exe
+C:\Users\Marco\source\repos\CarShowroomLabASPWebservice\LabbAPR400MarcoTeranGutmanowitz\obj\Debug\LabbAPR400MarcoTeranGutmanowitz.pdb

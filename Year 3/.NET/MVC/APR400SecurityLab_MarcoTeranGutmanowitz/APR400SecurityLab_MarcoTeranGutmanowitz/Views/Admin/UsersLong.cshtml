@@ -1,0 +1,86 @@
+﻿@model ManageUsersViewModel
+
+@{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Users</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users) 
+            {
+                <tr>
+                    <td>@user.Email</td>
+                    <td>
+                        @if (Model.UserRoles.ContainsKey(user.Id))
+                        {
+                            @foreach (var role in Model.UserRoles[user.Id])
+                            {
+                                <span>@role</span>
+                            }
+                        }
+                        else
+                        {
+                            <span>No roles assigned</span>
+                        }
+                    </td>
+                    <td>
+                        <!-- Add role dropdown and button -->
+                        <form asp-action="AddRole" asp-controller="Admin" method="post">
+                            <input type="hidden" name="UserId" value="@user.Id" />
+                            <select name="RoleName">
+                                @foreach (var role in Model.Roles)
+                                {
+                                    <option value="@role.Name">@role.Name</option>
+                                }
+                            </select>
+                            <button type="submit">Add Role</button>
+                        </form>
+                    </td>
+                    <td>
+                        @if (Model.UserRoles.ContainsKey(user.Id))
+                        {
+                            foreach (var role in Model.UserRoles[user.Id])
+                            {
+                                <form asp-action="RemoveRole" asp-controller="Admin" method="post">
+                                    <input type="hidden" name="userId" value="@user.Id" />
+                                    <input type="hidden" name="roleName" value="@role" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Remove @role</button>
+                                </form>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @*foreach (var user in Model.Users)
+        {
+
+            <p>User: @user.Email</p>
+            <p>Has roles:</p>
+            <p>@string.Join(",", Model.UserRoles[user.Id])</p>
+            <button></button>*@
+
+    <!--foreach (var userRole in Model.UserRoles)
+    {
+        //dont use this, its inefficient-->
+    @*if(user.Id == userRole.Key)
+        {
+            <p>@userRole.Value</p>
+        }*@
+
+    <!--if (Model.UserRoles.ContainsKey(user.Id))
+        {
+        }
+        else
+        {
+            <p>No roles assigned.</p>
+        }
+    }-->
+}
+}

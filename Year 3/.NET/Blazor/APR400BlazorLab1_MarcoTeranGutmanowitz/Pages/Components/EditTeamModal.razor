@@ -1,0 +1,57 @@
+﻿@page "/editteammodal"
+@using Services
+@inject TeamService TeamService
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <div class="form-group">
+                    <label for="teamName">Team Name:</label>
+                    <input type="text" class="form-control" id="teamName" @bind="Team.Name" />
+                </div>
+                <div class="form-group">
+                    <label for="stadiumName">Stadium Name:</label>
+                    <input type="text" class="form-control" id="stadiumName" @bind="Team.StadiumName" />
+                </div>
+                <div class="form-group">
+                    <label for="stadiumName">Chamipnships won:</label>
+                    <input type="number" class="form-control" id="championshipsWon" @bind="Team.ChampionshipsWon" />
+                </div>
+                <div class="form-group">
+                    <label for="stadiumName">Founded date:</label>
+                    <input type="date" class="form-control" id="championshipsWon" @bind="Team.FoundedDate" />
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <button type="button" class="btn-info mr-3" @onclick="(async () => await AddTeam(Team))">
+                    <i class="fas fa-trash pr-2">
+                        @*icon for "Yes"*@
+                        Add
+                    </i>
+                </button>
+                <button type="button" class="btn-danger mr-3" @onclick="(async () => await ModalInstance.CancelAsync())">
+                    <i class="fas fa-times pr-2">
+                        Cancel
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
+    [Parameter] public Team Team { get; set; }
+
+    private async Task AddTeam(Team teamToChange)
+    {
+        await TeamService.UpdateTeamAsync(Team);
+        StateHasChanged();
+        await ModalInstance.CloseAsync();
+    }
+}

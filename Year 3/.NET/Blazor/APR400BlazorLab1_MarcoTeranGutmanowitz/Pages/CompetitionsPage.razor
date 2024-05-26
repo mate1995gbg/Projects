@@ -1,0 +1,51 @@
+﻿@page "/competitionspage"
+@using Model.APIModel
+@inject HttpClient Http
+<h3>Competitions Overview</h3>
+
+@if (CompetitionResponse == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Cup</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var competition in CompetitionResponse.Competitions.OrderByDescending(c => c.CurrentSeason?.StartDate ?? DateTime.MinValue))
+            {
+                <tr>
+                    <td>@competition.area.Name</td>
+                    <td>@competition.Name</td>
+                    @if (competition.CurrentSeason != null)
+                    {
+                        <td>@competition.CurrentSeason.StartDate</td>
+                        <td>@competition.CurrentSeason.EndDate</td>
+                    }
+                    else
+                    {
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private CompetitionResponse CompetitionResponse;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Http.BaseAddress = new Uri("http://api.football-data.org/v4/");
+        CompetitionResponse = await Http.GetFromJsonAsync<CompetitionResponse>("competitions");
+    }
+}

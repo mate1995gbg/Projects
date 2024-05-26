@@ -1,0 +1,69 @@
+﻿@page "/trainers"
+@inject MongoDbService DbService
+
+@using Blazored.Modal;
+@using Blazored.Modal.Services;
+@using Components;
+
+<h2>Trainers</h2>
+<button type="button" class="btn btn-primary" @onclick="(async () => await ShowAddTrainerModal())"><i class="fas fa-plus pr-2"></i>Add a New Trainer</button>
+@if (trainers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!trainers.Any())
+{
+    <p>No trainers found.</p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trainer in trainers)
+            {
+                <tr>
+                    <td>@trainer.name</td>
+                    <td>@trainer.gender</td>
+                    @foreach (var team in teams)
+                    {
+                        if (trainer.team_id == team.id)
+                        {
+                            <td>@team.name</td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Trainer> trainers;
+    private List<TrainerTeam> teams;
+    [CascadingParameter] IModalService Modal { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        trainers = await DbService.GetAllTrainers();
+        teams = await DbService.GetAllTrainerTeams();
+    }
+    private async Task ShowAddTrainerModal()
+    {
+        var addTrainerModal = Modal.Show<AddTrainerModal>("Add Trainer: ");
+        var result = await addTrainerModal.Result;
+
+        if (!result.Cancelled)
+        {
+            trainers = await DbService.GetAllTrainers();
+            StateHasChanged();
+        }
+    }
+}

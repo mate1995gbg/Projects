@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APR400BlazorLab1_MarcoTeranGutmanowitz", "APR400BlazorLab1_MarcoTeranGutmanowitz.csproj", "{8EA21B24-B462-46B9-85E7-67CB8D126EF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EA21B24-B462-46B9-85E7-67CB8D126EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA21B24-B462-46B9-85E7-67CB8D126EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA21B24-B462-46B9-85E7-67CB8D126EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA21B24-B462-46B9-85E7-67CB8D126EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B60A0E8-1F3A-4B8C-B6F4-9B72B226F76F}
+	EndGlobalSection
+EndGlobal

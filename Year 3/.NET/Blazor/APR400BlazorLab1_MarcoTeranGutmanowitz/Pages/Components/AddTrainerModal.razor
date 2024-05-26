@@ -1,0 +1,89 @@
+﻿@page "/addtrainermodal"
+@using Services
+@inject MongoDbService MongoService
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <div class="form-group">
+                    <label for="trainerName">Trainer Name:</label>
+                    <input type="text" class="form-control" id="teamName" @bind="trainerToAdd.name" />
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of birth:</label>
+                    <input type="text" class="form-control" id="stadiumName" @bind="trainerToAdd.born" />
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirth">Select gender:</label>
+                    <input type="text" class="form-control" id="stadiumName" @bind="trainerToAdd.gender" />
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirth">Select recruitment date:</label>
+                    <input type="text" class="form-control" id="stadiumName" @bind="trainerToAdd.recruited" />
+                </div>
+                <div class="form-group">
+                    <label for="stadiumName">select a team for player:</label>
+                    <select class="form-control" @bind="trainerToAdd.team_id">
+                        @foreach (var team in teams)
+                        {
+                            <option value="@team.id">@team.name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <button type="button" class="btn-info mr-3" @onclick="(async () => await AddTrainer(trainerToAdd))">
+                    <i class="fas fa-trash pr-2">
+                        @*icon for "Yes"*@
+                        Add
+                    </i>
+                </button>
+                <button type="button" class="btn-danger mr-3" @onclick="(async () => await ModalInstance.CancelAsync())">
+                    <i class="fas fa-times pr-2">
+                        Cancel
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
+    List<TrainerTeam> teams = new List<TrainerTeam>();
+    Trainer trainerToAdd = new Trainer();
+    protected override async Task OnInitializedAsync()
+    {
+        teams = await MongoService.GetAllTrainerTeams();
+    }
+
+    private async Task AddTrainer(Trainer trainerToAdd)
+    {
+        if (trainerToAdd.team_id != null && trainerToAdd.name != null)
+        {
+            await MongoService.AddTrainer(trainerToAdd);
+            StateHasChanged();
+            await ModalInstance.CloseAsync();
+        }
+        //if (teamPlayerHistory.TeamId != null)
+        //{
+        //    teamPlayerHistory.JoinDate = DateTime.Now;
+        //    await PlayerService.AddPlayerAsync(playerToAdd); //need to post player first in order for object to get a Id
+        //    playerToAdd = await PlayerService.GetPlayerByNameAsync(playerToAdd); //get the Id again
+        //    teamPlayerHistory.PlayerId = playerToAdd.PlayerId; //set id to teamPlayerHistory object
+        //    await TeamPlayerService.AddTeamPlayerHistoryAsync(teamPlayerHistory);
+        //    StateHasChanged();
+        //    await ModalInstance.CloseAsync();
+        //}
+        //else
+        //{
+        //    // Handle error: Team not found.
+        //}
+    }
+}
+

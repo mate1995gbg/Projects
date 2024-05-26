@@ -1,0 +1,147 @@
+﻿@page "/playersPage"
+
+@using Blazored.Modal;
+@using Blazored.Modal.Services;
+@using Components;
+
+@inject PlayerService PlayerService
+@inject TeamService TeamService
+@inject TeamPlayerHistoryService TeamPlayerService
+
+<PageTitle>Your Teams and Players</PageTitle>
+<button type="button" class="btn btn-primary" @onclick="(async () => await ShowAddPlayersModal())">
+    <i class="fas fa-plus pr-2"></i>Add a New Player
+</button>
+<div class="modal-body">
+</div>
+<div class="modal-footer">
+</div>
+
+@foreach (var group in playerTeamMapping.GroupBy(pt => pt.Value)) //value = team, key = player. here we are using LINQ method GroupBy to group players that have matching teams.
+{
+    var team = group.Key;
+    <h3>@team.Name</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Date of birth</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in group)
+            {
+                var player = entry.Key;
+                bool showHistoryButton = playerHistories.ContainsKey(player.PlayerId) && playerHistories[player.PlayerId].Count > 1;
+                <tr>
+                    <td>@player.FirstName</td>
+                    <td>@player.LastName</td>
+                    <td>@player.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                    <td>@player.PlayerPosition</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-primary float-right mr-2" @onclick="(async () => await ShowEditPlayerModal(player))">
+                            <i class="fas fa-gear pr-2"></i>Edit
+                        </button>
+                        <button type="button" style="margin-right: 5px;" class="btn btn-sm btn-danger float-right mr-2" @onclick="(async () => await ShowConfirmationModal(player))">
+                            <i class="fas fa-trash pr-2"></i>Delete
+                        </button>
+                        @if (showHistoryButton)
+                        {
+                            <button type="button" class="btn btn-sm btn-info float-right" @onclick="(async () => await ShowPlayerTeamHistoryModal(player))">
+                                <i class="fas fa-history pr-2"></i>Show player team history
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [CascadingParameter] IModalService Modal { get; set; }
+    List<Player> allPlayers = new List<Player>();
+    Dictionary<Player, Team> playerTeamMapping = new Dictionary<Player, Team>();
+    Dictionary<int, List<TeamPlayerHistory>> playerHistories = new Dictionary<int, List<TeamPlayerHistory>>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allPlayers = await PlayerService.GetPlayersAsync();
+        playerHistories = await TeamPlayerService.GetAllTeamPlayerHistoriesAsync();
+
+        foreach (Player player in allPlayers)
+        {
+            var team = await TeamService.GetTeamByPlayerAsync(player);
+            playerTeamMapping[player] = team;
+        }
+    }
+
+    private async Task ShowAddPlayersModal()
+    {
+        var addPlayerModal = Modal.Show<AddPlayerModal>("Add Player: ");
+        var result = await addPlayerModal.Result;
+
+        if (!result.Cancelled)
+        {
+            allPlayers = await PlayerService.GetPlayersAsync();
+            foreach (Player player in allPlayers)
+            {
+                var team = await TeamService.GetTeamByPlayerAsync(player);
+                playerTeamMapping[player] = team;
+            }
+            StateHasChanged();
+        }
+    }
+
+    private async Task ShowConfirmationModal(Player player)
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Player", player); //sending in team for usage in ConfirmationModal
+
+        var confirmationModal = Modal.Show<ConfirmationModal>("Delete Player?", parameters);
+        var result = await confirmationModal.Result;
+
+        if (!result.Cancelled)
+        {
+            allPlayers = await PlayerService.GetPlayersAsync();
+            foreach (Player player2 in allPlayers)
+            {
+                var team = await TeamService.GetTeamByPlayerAsync(player2);
+                playerTeamMapping[player2] = team;
+            }
+            StateHasChanged();
+        }
+    }
+
+    private async Task ShowEditPlayerModal(Player player)
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Player", player);
+
+        var editTeamModal = Modal.Show<EditPlayerModal>("Edit team:", parameters);
+        var result = await editTeamModal.Result;
+
+        if (!result.Cancelled)
+        {
+            allPlayers = await PlayerService.GetPlayersAsync();
+            foreach (Player player3 in allPlayers)
+            {
+                var team = await TeamService.GetTeamByPlayerAsync(player3);
+                playerTeamMapping[player3] = team;
+            }
+            StateHasChanged();
+        }
+    }
+
+    private async Task ShowPlayerTeamHistoryModal(Player player)
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Player", player);
+
+        var playerTeamHistoryModal = Modal.Show<PlayerTeamHistoryModal>("Player team history", parameters);
+        var result = await playerTeamHistoryModal.Result;
+    }
+}

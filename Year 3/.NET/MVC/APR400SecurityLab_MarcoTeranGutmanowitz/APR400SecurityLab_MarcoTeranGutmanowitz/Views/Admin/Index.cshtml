@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@model IEnumerable<IdentityRole>
+<p>
+    <a id="addnewrole" asp-action="Create" asp-controller="Admin">Add new Role?</a>
+</p>
+@foreach (var role in Model)
+{
+    <p>@role.Name</p>
+    <form method="post" asp-action="Delete">
+        <input type="hidden" name="id" value="@role.Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+}

@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace APR400BlazorLab1_MarcoTeranGutmanowitz.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
+    @*<link href="css/site.css" rel="stylesheet" />*@
+    <link href="APR400BlazorLab1_MarcoTeranGutmanowitz.styles.css" rel="stylesheet" />
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">*@
+    <script src="https://kit.fontawesome.com/74e7cc9d27.js" crossorigin="anonymous"></script>
+    <link href="css/site.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    @RenderBody()
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/Blazored.Modal/blazored.modal.js"></script>
+</body>
+</html>
+
+@*_Layout.cshtml is used by Razor Pages and MVC views to maintain a consistent layout across different views or pages. 
+It's not directly related to the functioning of a Blazor app,
+ unless your Blazor app is hosted inside an ASP.NET Core app that also serves Razor Pages or MVC views.*@

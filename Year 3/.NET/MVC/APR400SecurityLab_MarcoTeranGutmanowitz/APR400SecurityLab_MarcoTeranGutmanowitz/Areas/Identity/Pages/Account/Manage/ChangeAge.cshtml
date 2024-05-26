@@ -1,0 +1,18 @@
+﻿@page
+@model APR400SecurityLab_MarcoTeranGutmanowitz.Areas.Identity.Pages.Account.Manage.ChangeAgeModel
+@{
+    ViewData["Title"] = "Change Age";
+}
+@{
+    <h1>Change your age</h1>
+    <p>Current Age: @Model.CurrentAge</p> //display the currentAge recieved from the model page (cshtml.cs)
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Input.Age"></label>
+            <input asp-for="Input.Age" class="form-control" />
+            <span asp-validation-for="Input.Age" class="text-danger"></span>
+        </div>
+        <button type="submit" class="form-control">Update Age</button>
+    </form>
+}

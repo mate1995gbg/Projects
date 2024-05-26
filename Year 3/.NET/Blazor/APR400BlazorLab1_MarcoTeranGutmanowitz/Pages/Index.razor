@@ -1,0 +1,39 @@
+﻿@page "/"
+@using Model.APIModel
+@inject MongoDbService MongoService
+@inject TeamService TeamService
+@inject PlayerService PlyerService
+<PageTitle>Index</PageTitle>
+
+<h1 class="titleDesign">Welcome to TeamAdmin 2023</h1>
+<h5>Todays date is: @DateTime.UtcNow</h5>
+<h5>Total amount of Players in your team: @amountOfPlayers</h5>
+<h5>Total amount of Teams: @amountOfTeams</h5>
+<h5>Total amount of trainers : @amountOfTrainers</h5>
+
+@code {
+    private List<Player> allPlayers;
+    private List<Team> allTeams;
+    private List<Trainer> allTrainers;
+    private int amountOfPlayers;
+    private int amountOfTeams;
+    private int amountOfTrainers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            allPlayers = await PlyerService.GetPlayersAsync();
+            allTeams = await TeamService.GetTeamsAsync();
+            allTrainers = await MongoService.GetAllTrainers();
+            amountOfPlayers = allPlayers.Count();
+            amountOfTeams = allTeams.Count();
+            amountOfTrainers = allTrainers.Count();
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+}

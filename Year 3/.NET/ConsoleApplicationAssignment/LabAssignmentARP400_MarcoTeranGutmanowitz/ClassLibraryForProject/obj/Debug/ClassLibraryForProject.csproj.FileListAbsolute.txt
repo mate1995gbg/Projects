@@ -1,0 +1,7 @@
+C:\Users\Marco\source\repos\ClassLibraryForProject\bin\Debug\Employees.txt
+C:\Users\Marco\source\repos\ClassLibraryForProject\bin\Debug\ClassLibraryForProject.dll
+C:\Users\Marco\source\repos\ClassLibraryForProject\bin\Debug\ClassLibraryForProject.pdb
+C:\Users\Marco\source\repos\ClassLibraryForProject\obj\Debug\ClassLibraryForProject.csproj.AssemblyReference.cache
+C:\Users\Marco\source\repos\ClassLibraryForProject\obj\Debug\ClassLibraryForProject.csproj.CoreCompileInputs.cache
+C:\Users\Marco\source\repos\ClassLibraryForProject\obj\Debug\ClassLibraryForProject.dll
+C:\Users\Marco\source\repos\ClassLibraryForProject\obj\Debug\ClassLibraryForProject.pdb

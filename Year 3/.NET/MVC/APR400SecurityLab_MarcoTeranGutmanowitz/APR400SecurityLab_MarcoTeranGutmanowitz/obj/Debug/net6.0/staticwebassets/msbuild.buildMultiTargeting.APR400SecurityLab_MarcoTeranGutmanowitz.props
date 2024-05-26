@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\APR400SecurityLab_MarcoTeranGutmanowitz.props" />
+</Project>

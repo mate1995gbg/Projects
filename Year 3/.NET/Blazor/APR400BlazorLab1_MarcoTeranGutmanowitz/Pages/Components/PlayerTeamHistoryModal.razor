@@ -1,0 +1,51 @@
+﻿@page "/playerteamhistorymodal"
+@using Services
+@inject PlayerService PlayerService
+@inject TeamPlayerHistoryService TeamPlayerService
+@inject TeamService TeamService
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <div class="form-group">
+                    <h3>Player Name: </h3>
+                    <label>@Player.FirstName @Player.LastName</label>
+                </div>
+                <div class="form-group">
+                    @foreach (var tph in allTphForPlayer)
+                    {
+                        if (tph.LeaveDate == null)
+                        {
+                            <h3>Current team:</h3>
+                            <label>@tph.Team.Name</label>
+                            <h3>Joined:</h3>
+                            <label>@tph.JoinDate</label>
+                        }
+                        else
+                        {
+                            <h3>Old Team:</h3>
+                            <label>@tph.Team.Name</label>
+                            <h3>Joined:</h3>
+                            <label>@tph.JoinDate</label>
+                            <h3>Left:</h3>
+                            <label>@tph.LeaveDate</label>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code { 
+    [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
+    [Parameter] public Player Player { get; set; }
+    List<TeamPlayerHistory> allTphForPlayer = new List<TeamPlayerHistory>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        allTphForPlayer = await TeamPlayerService.GetTeamPlayerHistoryListByPlayerIdAsync(Player.PlayerId);
+    }
+}

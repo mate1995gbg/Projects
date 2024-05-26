@@ -1,0 +1,91 @@
+﻿@page "/teamsPage"
+
+@using Blazored.Modal;
+@using Blazored.Modal.Services;
+@using Components;
+
+@inject TeamService TeamService
+
+<PageTitle>Your Teams</PageTitle>
+<button type="button" class="btn btn-primary" @onclick="(async () => await ShowAddTeamModal())"><i class="fas fa-plus pr-2"></i>Add a New Team</button>
+<div class="modal-body">
+</div>
+<div class="modal-footer">
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>Stadium</th>
+            <th>Won Championships</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var team in teams)
+        {
+            <tr>
+                <td>@team.Name</td>
+                <td>@team.StadiumName</td>
+                <td>@team.ChampionshipsWon</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-primary float-right" @onclick="(async () => await ShowEditTeamModal(team))"><i class="fas fa-gear pr-2"></i>Edit</button>
+                    <button type="button" class="btn btn-sm btn-danger float-right" @onclick="(async () => await ShowConfirmationModal(team))"><i class="fas fa-trash pr-2"></i>Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@code {
+    List<Team> teams = new List<Team>();
+
+    [CascadingParameter] IModalService Modal { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        teams = await TeamService.GetTeamsAsync();
+    }
+
+    private async Task ShowConfirmationModal(Team team)
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Team", team); //sending in team for usage in ConfirmationModal
+
+        var confirmationModal = Modal.Show<ConfirmationModal>("Delete Team?", parameters);
+        var result = await confirmationModal.Result;
+
+        if (!result.Cancelled)
+        {
+            teams = await TeamService.GetTeamsAsync();
+            StateHasChanged();
+        }
+    }
+
+    private async Task ShowAddTeamModal()
+    {
+        var addTeamModal = Modal.Show<AddTeamModal>("Add Team: ");
+        var result = await addTeamModal.Result;
+
+        if (!result.Cancelled)
+        {
+            teams = await TeamService.GetTeamsAsync();
+            StateHasChanged();
+        }
+    }
+
+    private async Task ShowEditTeamModal(Team team)
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Team", team);
+
+        var editTeamModal = Modal.Show<EditTeamModal>("Edit team:", parameters);
+        var result = await editTeamModal.Result;
+
+        if (!result.Cancelled)
+        {
+            teams = await TeamService.GetTeamsAsync();
+            StateHasChanged();
+        }
+    }
+}

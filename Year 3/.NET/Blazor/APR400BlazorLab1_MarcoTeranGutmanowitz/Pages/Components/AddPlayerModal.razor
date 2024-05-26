@@ -1,0 +1,87 @@
+﻿@page "/addplayermodal"
+@using Services
+@inject PlayerService PlayerService
+@inject TeamPlayerHistoryService TeamPlayerService 
+@inject TeamService TeamService 
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <div class="form-group">
+                    <label for="teamName">Player first Name:</label>
+                    <input type="text" class="form-control" id="teamName" @bind="playerToAdd.FirstName" />
+                </div>
+                <div class="form-group">
+                    <label for="stadiumName">Player last Name:</label>
+                    <input type="text" class="form-control" id="stadiumName" @bind="playerToAdd.LastName" />
+                </div>
+                <div class="form-group">
+                    <label for="stadiumName">Player position:</label>
+                    <select class="form-control" @bind="playerToAdd.PlayerPosition">
+                        @foreach (var position in Enum.GetValues(typeof(PlayerPosition)))
+                        {
+                            <option value="@position">@position</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="stadiumName">select a team for player:</label>
+                    <select class="form-control" @bind="teamPlayerHistory.TeamId">
+                        @foreach (var team in allTeams)
+                        {
+                            <option value="@team.Id">@team.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <button type="button" class="btn-info mr-3" @onclick="(async () => await AddPlayer(playerToAdd))">
+                    <i class="fas fa-trash pr-2">
+                        @*icon for "Yes"*@
+                        Add
+                    </i>
+                </button>
+                <button type="button" class="btn-danger mr-3" @onclick="(async () => await ModalInstance.CancelAsync())">
+                    <i class="fas fa-times pr-2">
+                        Cancel
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
+    Player playerToAdd = new Player();
+    Team teamForPlayer = new Team(); //delete?
+    List<Team> allTeams = new List<Team>();
+    TeamPlayerHistory teamPlayerHistory = new TeamPlayerHistory();
+    protected override async Task OnInitializedAsync()
+    {
+        allTeams = await TeamService.GetTeamsAsync();
+    }
+
+    private async Task AddPlayer(Player playerToAdd)
+    {
+        if (teamPlayerHistory.TeamId != null)
+        {
+            teamPlayerHistory.JoinDate = DateTime.Now;
+            await PlayerService.AddPlayerAsync(playerToAdd); //need to post player first in order for object to get a Id
+            playerToAdd = await PlayerService.GetPlayerByNameAsync(playerToAdd); //get the Id again
+            teamPlayerHistory.PlayerId = playerToAdd.PlayerId; //set id to teamPlayerHistory object
+            await TeamPlayerService.AddTeamPlayerHistoryAsync(teamPlayerHistory);
+            StateHasChanged();
+            await ModalInstance.CloseAsync();
+        }
+        else
+        {
+            // Handle error: Team not found.
+        }
+
+    }
+}
